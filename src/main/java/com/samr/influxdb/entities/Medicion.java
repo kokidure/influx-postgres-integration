@@ -1,15 +1,18 @@
-package com.samr.influxdb.model;
+package com.samr.influxdb.entities;
 
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Mediciones
+public class Medicion
 {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
     @Column(name = "instante")
     private Timestamp instante;
@@ -28,7 +31,7 @@ public class Mediciones
     @Column(name = "tipo_consumo_ande")
     private String tipoConsumoAnde;
 
-    public Mediciones() {
+    public Medicion() {
 
     }
 
@@ -57,11 +60,11 @@ public class Mediciones
     }
 
     public Timestamp getInstante_medidor() {
-        return instante_medidor;
+        return instanteMedidor;
     }
 
-    public void setInstante_medidor(Timestamp instante_medidor) {
-        this.instante_medidor = instante_medidor;
+    public void setInstante_medidor(Timestamp instanteMedidor) {
+        this.instanteMedidor = instanteMedidor;
     }
 
     public String getAdicional() {
@@ -72,20 +75,20 @@ public class Mediciones
         this.adicional = adicional;
     }
 
-    public Integer getId_obis() {
-        return id_obis;
+    public Integer getIdObis() {
+        return idObis;
     }
 
-    public void setId_obis(Integer id_obis) {
-        this.id_obis = id_obis;
+    public void setIdObis(Integer idObis) {
+        this.idObis = idObis;
     }
 
-    public Integer getId_medidor() {
-        return id_medidor;
+    public Integer getIdMedidor() {
+        return idMedidor;
     }
 
-    public void setId_medidor(Integer id_medidor) {
-        this.id_medidor = id_medidor;
+    public void setIdMedidor(Integer idMedidor) {
+        this.idMedidor = idMedidor;
     }
 
     public String getNis() {
@@ -96,12 +99,12 @@ public class Mediciones
         this.nis = nis;
     }
 
-    public String getTipo_consumo_ande() {
-        return tipo_consumo_ande;
+    public String getTipoConsumoAnde() {
+        return tipoConsumoAnde;
     }
 
-    public void setTipo_consumo_ande(String tipo_consumo_ande) {
-        this.tipo_consumo_ande = tipo_consumo_ande;
+    public void setTipoConsumoAnde(String tipoConsumoAnde) {
+        this.tipoConsumoAnde = tipoConsumoAnde;
     }
 
     

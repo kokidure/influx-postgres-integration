@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+    <meta http-equiv="Content-type" content="text/html"; charset="UTF-8"/>
+</head>
+<body>
+    <h1 th:text="Measurements"/>
+
+    <table>
+        <th:block th:each="med : ${mediciones}">
+            <tr>
+                <td th:text="${med.getId} + ' | '"></td>
+                <td th:text="${med.getInstante} + ' | '"></td>
+                <td th:text="${med.getValor} + ' | '"></td>
+                <td th:text="${med.getIdObis} + ' | '"></td>
+                <td th:text="${med.getIdMedidor} + ' | '"></td>
+                <td th:text="${med.getNis} + ' | '"></td>
+            </tr>
+        </th:block>
+    </table>
+</body>
+</html>
