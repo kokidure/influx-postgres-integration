@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Medicion
+public class Mediciones
 {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -31,7 +31,7 @@ public class Medicion
     @Column(name = "tipo_consumo_ande")
     private String tipoConsumoAnde;
 
-    public Medicion() {
+    public Mediciones() {
 
     }
 

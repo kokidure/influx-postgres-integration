@@ -17,7 +17,7 @@ public class InfluxdbApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		LOG.info("--------------estoy vivo------------------");
+		LOG.info("------------------Service running on localhost:8009------------------");
 	}
 }
 	

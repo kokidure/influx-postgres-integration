@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.samr.influxdb.entities.Medicion;
+import com.samr.influxdb.entities.Mediciones;
 import com.samr.influxdb.service.MedicionService;
 
 @Controller
@@ -36,7 +36,7 @@ public class WebController {
     @GetMapping("/listar")
     public String listAll(Model model){
         
-		List<Medicion> mediciones = service.listAll();
+		List<Mediciones> mediciones = service.listLimit(10);
 
         model.addAttribute("mediciones", mediciones);
 

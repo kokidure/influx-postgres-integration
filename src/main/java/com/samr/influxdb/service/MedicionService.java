@@ -8,8 +8,9 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.samr.influxdb.entities.Medicion;
+import com.samr.influxdb.entities.Mediciones;
 import com.samr.influxdb.repository.IMedicionRepo;
+import com.samr.influxdb.repository.MedicionRepoImpl;
 
 @Service
 public class MedicionService implements IMedicionService {
@@ -17,14 +18,17 @@ public class MedicionService implements IMedicionService {
     @Autowired
     private IMedicionRepo repo;
 
+    @Autowired
+    MedicionRepoImpl repoImpl;
+
     @Override
-    public void save(Medicion m) {
+    public void save(Mediciones m) {
         repo.save(m);
     }
 
     @Override
     public int createAndSave(Timestamp instante, Double valor, Integer idObis, Integer idMedidor, String nis) {
-        Medicion m = new Medicion();
+        Mediciones m = new Mediciones();
 
         m.setInstante(instante);
         m.setValor(valor);
@@ -45,7 +49,7 @@ public class MedicionService implements IMedicionService {
 		int idMedidor = generateRandomNumber(100, 200);
 		String nis = "" + generateRandomNumber(10000, 20000);
 
-        Medicion m = new Medicion();
+        Mediciones m = new Mediciones();
 
         m.setInstante(instante);
         m.setValor(valor);
@@ -66,9 +70,13 @@ public class MedicionService implements IMedicionService {
 	}
 
     @Override
-    public List<Medicion> listAll() {
-        List<Medicion> mediciones = repo.findAll();
+    public List<Mediciones> listAll() {
+        List<Mediciones> mediciones = repo.findAll();
         
         return mediciones;
+    }
+
+    public List<Mediciones> listLimit(int limit) {
+        return repoImpl.listLimit(limit);
     }
 }
