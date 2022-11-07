@@ -16,7 +16,6 @@ public class MedicionRepoImpl{
     @PersistenceContext
     private EntityManager entityManager;
 
-    //@Override
     public List<Mediciones> listLimit(int limit) {
         return entityManager.createQuery("SELECT m FROM Mediciones m", Mediciones.class).setMaxResults(limit).getResultList();
     }
