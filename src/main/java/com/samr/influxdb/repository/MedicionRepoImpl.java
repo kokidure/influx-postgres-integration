@@ -9,9 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import com.samr.influxdb.entities.Mediciones;
 
-
 @Repository
-public class MedicionRepoImpl{
+public class MedicionRepoImpl {
     
     @PersistenceContext
     private EntityManager entityManager;

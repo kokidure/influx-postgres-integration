@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.samr.influxdb.entities.Mediciones;
 import com.samr.influxdb.repository.IMedicionRepo;
+import com.samr.influxdb.repository.MedicionInfluxImpl;
 import com.samr.influxdb.repository.MedicionRepoImpl;
 
 @Service
@@ -20,6 +21,9 @@ public class MedicionService implements IMedicionService {
 
     @Autowired
     MedicionRepoImpl repoImpl;
+
+    @Autowired
+    MedicionInfluxImpl repoInflux;
 
     @Override
     public void save(Mediciones m) {

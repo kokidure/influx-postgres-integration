@@ -9,28 +9,20 @@ import com.influxdb.annotations.Measurement;
 public class MedicionesInflux {
     @Column (tag = true)
     private Integer id;
-
     @Column (timestamp = true)
     private Instant instante;
-
     @Column
     private Double valor;
-    
     @Column
     private Instant instanteMedidor;
-    
     @Column
     private String adicional;
-    
     @Column
     private Integer idObis;
-    
     @Column
     private Integer idMedidor;
-    
     @Column
     private String nis;
-    
     @Column
     private String tipoConsumoAnde;
 
